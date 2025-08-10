@@ -1,0 +1,158 @@
+2025-08-10 12:49:04 - Error: <b>Notice</b>:  Undefined property: Proxy::editToken in <b>/Users/saqibashraf/Desktop/ocupwork/catalog/controller/account/login.php</b> on line <b>277</b>
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/proxy.php
+Line: 91
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/account/login.php
+Line: 277
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Account\Login
+Function: token
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-10 12:49:17 - PHP Warning:  Undefined array key "customer_token" in /Users/saqibashraf/Desktop/ocupwork/catalog/controller/common/header.php on line 87
+2025-08-10 12:49:17 - PHP Warning:  Undefined array key "customer_token" in /Users/saqibashraf/Desktop/ocupwork/catalog/controller/common/header.php on line 88
+2025-08-10 12:49:17 - PHP Warning:  Undefined array key "customer_token" in /Users/saqibashraf/Desktop/ocupwork/catalog/controller/common/header.php on line 89
+2025-08-10 12:49:17 - PHP Warning:  Undefined array key "customer_token" in /Users/saqibashraf/Desktop/ocupwork/catalog/controller/common/header.php on line 90
+2025-08-10 12:49:23 - PHP Warning:  Undefined array key "customer_token" in /Users/saqibashraf/Desktop/ocupwork/catalog/controller/common/header.php on line 87
+2025-08-10 12:49:23 - PHP Warning:  Undefined array key "customer_token" in /Users/saqibashraf/Desktop/ocupwork/catalog/controller/common/header.php on line 88
+2025-08-10 12:49:23 - PHP Warning:  Undefined array key "customer_token" in /Users/saqibashraf/Desktop/ocupwork/catalog/controller/common/header.php on line 89
+2025-08-10 12:49:23 - PHP Warning:  Undefined array key "customer_token" in /Users/saqibashraf/Desktop/ocupwork/catalog/controller/common/header.php on line 90
+2025-08-10 13:06:36 - Error: Error: Table 'oc4.oc_checkout_data' doesn't exist<br/>Error No: 1146<br/>SELECT * FROM `oc_checkout_data` WHERE `customer_id` = '0'
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/db/mysqli.php
+Line: 122
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/db.php
+Line: 54
+Class: Opencart\System\Library\DB\MySQLi
+Function: query
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/cart.php
+Line: 133
+Class: Opencart\System\Library\DB
+Function: query
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/loader.php
+Line: 343
+Class: Opencart\Catalog\Model\Checkout\Cart
+Function: getCheckoutData
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 4
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php
+Line: 348
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 5
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/loader.php
+Line: 112
+Class: Opencart\Catalog\Controller\Checkout\Confirm
+Function: index
+
+Backtrace: 6
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/checkout.php
+Line: 66
+Class: Opencart\System\Engine\Loader
+Function: controller
+
+Backtrace: 7
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Checkout\Checkout
+Function: index
+
+Backtrace: 8
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 9
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-10 13:07:00 - Error: Error: Unknown column 'customer_id' in 'where clause'<br/>Error No: 1054<br/>SELECT * FROM `oc_checkout_data` WHERE `customer_id` = '0'
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/db/mysqli.php
+Line: 122
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/db.php
+Line: 54
+Class: Opencart\System\Library\DB\MySQLi
+Function: query
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/cart.php
+Line: 133
+Class: Opencart\System\Library\DB
+Function: query
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/loader.php
+Line: 343
+Class: Opencart\Catalog\Model\Checkout\Cart
+Function: getCheckoutData
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 4
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php
+Line: 348
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 5
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/loader.php
+Line: 112
+Class: Opencart\Catalog\Controller\Checkout\Confirm
+Function: index
+
+Backtrace: 6
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/checkout.php
+Line: 66
+Class: Opencart\System\Engine\Loader
+Function: controller
+
+Backtrace: 7
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Checkout\Checkout
+Function: index
+
+Backtrace: 8
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 9
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once

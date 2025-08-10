@@ -6,7 +6,7 @@ define('APPLICATION', 'Catalog');
 define('HTTP_SERVER', 'http://opencartnew.local/');
 
 // DIR
-define('DIR_OPENCART', '/Users/saqibashraf/Desktop/upwork/');
+define('DIR_OPENCART', '/Users/saqibashraf/Desktop/ocupwork/');
 define('DIR_APPLICATION', DIR_OPENCART . 'catalog/');
 define('DIR_EXTENSION', DIR_OPENCART . 'extension/');
 define('DIR_IMAGE', DIR_OPENCART . 'image/');

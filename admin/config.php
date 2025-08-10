@@ -7,7 +7,7 @@ define('HTTP_SERVER', 'http://opencartnew.local/admin/');
 define('HTTP_CATALOG', 'http://opencartnew.local/');
 
 // DIR
-define('DIR_OPENCART', '/Users/saqibashraf/Desktop/upwork/');
+define('DIR_OPENCART', '/Users/saqibashraf/Desktop/ocupwork/');
 define('DIR_APPLICATION', DIR_OPENCART . 'admin/');
 define('DIR_EXTENSION', DIR_OPENCART . 'extension/');
 define('DIR_IMAGE', DIR_OPENCART . 'image/');
