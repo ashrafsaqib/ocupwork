@@ -509,6 +509,15 @@ class Confirm extends \Opencart\System\Engine\Controller {
 					'tax'          => $this->tax->getTax($product['price'], $product['tax_class_id'])
 				] + $product;
 			}
+			// put  post value of selected_controller and array bu[], allocation[] into json and save as order comment
+			$custom_data = [
+				'selected_controller' => $this->request->post['selected_controller'] ?? '',
+				'bu' => $this->request->post['bu'] ?? [],
+				'allocation' => $this->request->post['allocation'] ?? []
+			];
+			$order_data['comment'] = json_encode($custom_data, JSON_PRETTY_PRINT);
+
+
 
 			// Add totals
 			$order_data['totals'] = $totals;

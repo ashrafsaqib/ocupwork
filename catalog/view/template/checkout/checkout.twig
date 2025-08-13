@@ -26,10 +26,33 @@
 </div>
 <script>
   function saveOrder() {
+    var allocationInputs = $('input[name="allocation[]"]');
+
+    if (allocationInputs.length > 0) {
+        var totalAllocation = 0;
+        allocationInputs.each(function() {
+            var value = parseFloat($(this).val());
+            if (!isNaN(value)) {
+                totalAllocation += value;
+            }
+        });
+
+        if (Math.round(totalAllocation) !== 100) {
+            alert('Allocation should sum to 100');
+            return;
+        }
+    }
+
     $.ajax({
         url: 'index.php?route=checkout/confirm.saveOrder&language={{ language }}',
         type: 'post',
-        data: $('#form-register').serialize()+'&custom='+$('#select-option').val()+'&address_id='+$('#input-shipping-address').val()+'&'+$('#form-shipping-address').serialize(),
+        data: $('#form-register').serialize() + 
+              '&custom=' + $('#select-option').val() + 
+              '&address_id=' + $('#input-shipping-address').val() + 
+              '&' + $('#form-shipping-address').serialize() +
+              '&selected_controller=' + $('#select-controller').val() +
+              '&' + $('input[name="bu[]"]').serialize() +
+              '&' + $('input[name="allocation[]"]').serialize(),
         success: function(json) {
           // redirect to the success page
           if (json.redirect) {
