@@ -5,7 +5,7 @@
     <select name="select_controller" id="select-controller" class="form-select">
       <option value="">-- Controller --</option>
       {% for data in checkout_data %}
-        <option value="{{ data.BU }}">{{ data.Allocation }}</option>
+        <option value="{{ data.Name }}">{{ data.Name }}</option>
       {% endfor %}
     </select>
   </div>

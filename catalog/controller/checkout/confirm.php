@@ -13,6 +13,46 @@ class Confirm extends \Opencart\System\Engine\Controller {
 	 *
 	 * @return string
 	 */
+	public function getData(): string {
+		$accessToken = "eyJ0eXAiOiJKV1QiLCJub25jZSI6IkszRXVLSGtwVFNKWWdOR1lRN3U0SkswdHFUUFZ6dEtDOUVScm5VUTZLMk0iLCJhbGciOiJSUzI1NiIsIng1dCI6IkpZaEFjVFBNWl9MWDZEQmxPV1E3SG4wTmVYRSIsImtpZCI6IkpZaEFjVFBNWl9MWDZEQmxPV1E3SG4wTmVYRSJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20iLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC9mY2JhNmJhNi05Y2E2LTQ4OTItOTkyNS0zMWYyNjQ4NDY1NGIvIiwiaWF0IjoxNzU1MTE5NDUyLCJuYmYiOjE3NTUxMTk0NTIsImV4cCI6MTc1NTEyMzM1MiwiYWlvIjoiazJSZ1lIZys1UkpyMHJ5ZjB3M25jRjk5UFZuc1BRQT0iLCJhcHBfZGlzcGxheW5hbWUiOiJPcmRlclN5c3RlbUFQSSIsImFwcGlkIjoiZDhjMWQ3MzItMGVhNi00NzBkLWFmYTEtN2VhYWY0OWIxM2U1IiwiYXBwaWRhY3IiOiIxIiwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvZmNiYTZiYTYtOWNhNi00ODkyLTk5MjUtMzFmMjY0ODQ2NTRiLyIsImlkdHlwIjoiYXBwIiwib2lkIjoiNDI4MGJmYzQtNzhkZS00Yjc4LTljZTgtNzgzNjM4YTI0MjM1IiwicmgiOiIxLkFSSUFwbXU2X0thY2traVpKVEh5WklSbFN3TUFBQUFBQUFBQXdBQUFBQUFBQUFBU0FBQVNBQS4iLCJyb2xlcyI6WyJVc2VyLlJlYWRCYXNpYy5BbGwiLCJHcm91cC5SZWFkLkFsbCIsIkRpcmVjdG9yeS5SZWFkLkFsbCIsIkdyb3VwTWVtYmVyLlJlYWQuQWxsIl0sInN1YiI6IjQyODBiZmM0LTc4ZGUtNGI3OC05Y2U4LTc4MzYzOGEyNDIzNSIsInRlbmFudF9yZWdpb25fc2NvcGUiOiJOQSIsInRpZCI6ImZjYmE2YmE2LTljYTYtNDg5Mi05OTI1LTMxZjI2NDg0NjU0YiIsInV0aSI6ImJ5QWUwc0lJUkUyS2lpanc2TDRlQUEiLCJ2ZXIiOiIxLjAiLCJ3aWRzIjpbIjA5OTdhMWQwLTBkMWQtNGFjYi1iNDA4LWQ1Y2E3MzEyMWU5MCJdLCJ4bXNfZnRkIjoiTWM5RnRJYWdjWUtyVVNiZERydUZ2SXowazM2WGlyejI2d0tVVDhIYWgwMEJkWE56YjNWMGFDMWtjMjF6IiwieG1zX2lkcmVsIjoiNiA3IiwieG1zX3JkIjoiMC40MkxsWUJKaUZCSVM0V0FYRWpoM29Fd205SnFJNTR4N00wN3N1S040QnlqS0tTVFEtODNENUVYUE10X1psNmV4bkg0bHZBMG95aUVrd013QUFRZWdOQUEiLCJ4bXNfdGNkdCI6MTQyNjcxMTc5Mn0.IdMhNLWHQm4p8kXsxmxQGRKGg9gkWBRG5opD-0Qz8TNLxcvzTNHmVpA96PGHVKGD5_IpOylBMOYFI1azDyXo2PyYykn2NOg1qfJt-6bQMf_z69TX_7xxilUW0OzPzw79EXJnN7m0ZBXWiVUsj7qqNzvQFOUIDeFHRtgFvlPk93mcdcqPcBd51jD6zJkJU41T7WTkhkv5atjqqiTICh0QaRFEklOITa-dFzf9H1VE5y6yRSaKWkFI2fTuFW1iHYgtLC9JMhos1dmReHZlwYF56wk_PZ052PC16AFD4ao-9njeDMDjprhn0y7RVLDLnegSlHe6oiQW3umc6oT-XEFEHw";
+
+		// Microsoft Graph API endpoint
+		$url = "https://graph.microsoft.com/v1.0/groups";
+
+		// Initialize cURL
+		$ch = curl_init();
+
+		// Set cURL options
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Return response instead of output
+		curl_setopt($ch, CURLOPT_HTTPHEADER, [
+			"Authorization: Bearer {$accessToken}",
+			"Accept: application/json"
+		]);
+
+		// Execute request
+		$response = curl_exec($ch);
+
+		// Check for errors
+		if (curl_errno($ch)) {
+			echo "cURL error: " . curl_error($ch);
+			curl_close($ch);
+			exit;
+		}
+
+		curl_close($ch);
+
+		// Decode JSON response
+		$data = json_decode($response, true);
+
+		$displayNames = array_column($data['value'], 'displayName');
+
+		$this->db->query("DELETE FROM `" . DB_PREFIX . "checkout_data`");
+		foreach ($displayNames as $displayName) {
+			$this->db->query("INSERT INTO `" . DB_PREFIX . "checkout_data` SET `name` = '" . $this->db->escape($displayName) . "'");
+		}
+
+	}
 	public function index(): string {
 		$this->load->language('checkout/confirm');
 
@@ -517,8 +557,6 @@ class Confirm extends \Opencart\System\Engine\Controller {
 			];
 			$order_data['custom'] = json_encode($custom_data, JSON_PRETTY_PRINT);
 			$order_data['comment'] = $this->request->post['comment'] ?? '';
-
-
 
 			// Add totals
 			$order_data['totals'] = $totals;
