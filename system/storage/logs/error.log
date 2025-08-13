@@ -156,3 +156,780 @@ Backtrace: 9
 File: /Users/saqibashraf/Desktop/ocupwork/index.php
 Line: 20
 Function: require_once
+2025-08-13 10:37:50 - PHP Warning:  Undefined array key "trial_price" in /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php on line 452
+2025-08-13 10:37:50 - Error: Opencart\System\Library\Cart\Tax::getTax(): Argument #1 ($value) must be of type float, null given, called in /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php on line 452
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/cart/tax.php
+Line: 151
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php
+Line: 452
+Class: Opencart\System\Library\Cart\Tax
+Function: getTax
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Checkout\Confirm
+Function: saveOrder
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-13 10:37:57 - PHP Warning:  Undefined array key "trial_price" in /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php on line 452
+2025-08-13 10:37:57 - Error: Opencart\System\Library\Cart\Tax::getTax(): Argument #1 ($value) must be of type float, null given, called in /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php on line 452
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/cart/tax.php
+Line: 151
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php
+Line: 452
+Class: Opencart\System\Library\Cart\Tax
+Function: getTax
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Checkout\Confirm
+Function: saveOrder
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-13 10:41:10 - PHP Warning:  Undefined array key "trial_price" in /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php on line 452
+2025-08-13 10:41:10 - Error: Opencart\System\Library\Cart\Tax::getTax(): Argument #1 ($value) must be of type float, null given, called in /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php on line 452
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/cart/tax.php
+Line: 151
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php
+Line: 452
+Class: Opencart\System\Library\Cart\Tax
+Function: getTax
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Checkout\Confirm
+Function: saveOrder
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-13 10:45:23 - PHP Warning:  Undefined array key "trial_price" in /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php on line 448
+2025-08-13 10:45:23 - Error: Opencart\System\Library\Cart\Tax::getTax(): Argument #1 ($value) must be of type float, null given, called in /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php on line 448
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/cart/tax.php
+Line: 151
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php
+Line: 448
+Class: Opencart\System\Library\Cart\Tax
+Function: getTax
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Checkout\Confirm
+Function: saveOrder
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-13 10:47:00 - PHP Warning:  Undefined array key "subscription_id" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:47:00 - PHP Warning:  Undefined array key "payment_address_id" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:47:00 - PHP Warning:  Undefined array key "payment_firstname" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:47:00 - Error: Opencart\System\Library\DB::escape(): Argument #1 ($value) must be of type string, null given, called in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/db.php
+Line: 64
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php
+Line: 93
+Class: Opencart\System\Library\DB
+Function: escape
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/loader.php
+Line: 343
+Class: Opencart\Catalog\Model\Checkout\Order
+Function: addOrder
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php
+Line: 457
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 4
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Checkout\Confirm
+Function: saveOrder
+
+Backtrace: 5
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 6
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-13 10:47:55 - PHP Warning:  Undefined array key "subscription_id" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:47:55 - PHP Warning:  Undefined array key "payment_address_id" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:47:55 - PHP Warning:  Undefined array key "payment_firstname" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:47:55 - Error: Opencart\System\Library\DB::escape(): Argument #1 ($value) must be of type string, null given, called in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/db.php
+Line: 64
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php
+Line: 93
+Class: Opencart\System\Library\DB
+Function: escape
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/loader.php
+Line: 343
+Class: Opencart\Catalog\Model\Checkout\Order
+Function: addOrder
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php
+Line: 453
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 4
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Checkout\Confirm
+Function: saveOrder
+
+Backtrace: 5
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 6
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-13 10:48:50 - PHP Warning:  Undefined array key "payment_address_id" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:48:50 - PHP Warning:  Undefined array key "payment_firstname" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:48:50 - Error: Opencart\System\Library\DB::escape(): Argument #1 ($value) must be of type string, null given, called in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/db.php
+Line: 64
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php
+Line: 93
+Class: Opencart\System\Library\DB
+Function: escape
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/loader.php
+Line: 343
+Class: Opencart\Catalog\Model\Checkout\Order
+Function: addOrder
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php
+Line: 455
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 4
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Checkout\Confirm
+Function: saveOrder
+
+Backtrace: 5
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 6
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-13 10:49:33 - PHP Warning:  Undefined array key "payment_firstname" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:49:33 - Error: Opencart\System\Library\DB::escape(): Argument #1 ($value) must be of type string, null given, called in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/db.php
+Line: 64
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php
+Line: 93
+Class: Opencart\System\Library\DB
+Function: escape
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/loader.php
+Line: 343
+Class: Opencart\Catalog\Model\Checkout\Order
+Function: addOrder
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php
+Line: 460
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 4
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Checkout\Confirm
+Function: saveOrder
+
+Backtrace: 5
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 6
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-13 10:51:34 - PHP Warning:  Undefined array key "payment_country" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:51:34 - Error: Opencart\System\Library\DB::escape(): Argument #1 ($value) must be of type string, null given, called in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/db.php
+Line: 64
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php
+Line: 93
+Class: Opencart\System\Library\DB
+Function: escape
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/loader.php
+Line: 343
+Class: Opencart\Catalog\Model\Checkout\Order
+Function: addOrder
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php
+Line: 472
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 4
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Checkout\Confirm
+Function: saveOrder
+
+Backtrace: 5
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 6
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-13 10:53:03 - PHP Warning:  Undefined array key "payment_zone" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:53:03 - Error: Opencart\System\Library\DB::escape(): Argument #1 ($value) must be of type string, null given, called in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/db.php
+Line: 64
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php
+Line: 93
+Class: Opencart\System\Library\DB
+Function: escape
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/loader.php
+Line: 343
+Class: Opencart\Catalog\Model\Checkout\Order
+Function: addOrder
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php
+Line: 474
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 4
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Checkout\Confirm
+Function: saveOrder
+
+Backtrace: 5
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 6
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-13 10:53:07 - PHP Warning:  Undefined array key "payment_zone" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:53:07 - Error: Opencart\System\Library\DB::escape(): Argument #1 ($value) must be of type string, null given, called in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/db.php
+Line: 64
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php
+Line: 93
+Class: Opencart\System\Library\DB
+Function: escape
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/loader.php
+Line: 343
+Class: Opencart\Catalog\Model\Checkout\Order
+Function: addOrder
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php
+Line: 474
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 4
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Checkout\Confirm
+Function: saveOrder
+
+Backtrace: 5
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 6
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-13 10:53:27 - PHP Warning:  Undefined array key "payment_address_format" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:53:27 - Error: Opencart\System\Library\DB::escape(): Argument #1 ($value) must be of type string, null given, called in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/db.php
+Line: 64
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php
+Line: 93
+Class: Opencart\System\Library\DB
+Function: escape
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/loader.php
+Line: 343
+Class: Opencart\Catalog\Model\Checkout\Order
+Function: addOrder
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php
+Line: 476
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 4
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Checkout\Confirm
+Function: saveOrder
+
+Backtrace: 5
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 6
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-13 10:53:38 - PHP Warning:  Undefined array key "shipping_method" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:53:38 - PHP Warning:  Undefined array key "comment" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:53:38 - Error: Opencart\System\Library\DB::escape(): Argument #1 ($value) must be of type string, null given, called in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/db.php
+Line: 64
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php
+Line: 93
+Class: Opencart\System\Library\DB
+Function: escape
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/loader.php
+Line: 343
+Class: Opencart\Catalog\Model\Checkout\Order
+Function: addOrder
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php
+Line: 478
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 4
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Checkout\Confirm
+Function: saveOrder
+
+Backtrace: 5
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 6
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-13 10:53:59 - PHP Warning:  Undefined array key "comment" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:53:59 - Error: Opencart\System\Library\DB::escape(): Argument #1 ($value) must be of type string, null given, called in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/db.php
+Line: 64
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php
+Line: 93
+Class: Opencart\System\Library\DB
+Function: escape
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/loader.php
+Line: 343
+Class: Opencart\Catalog\Model\Checkout\Order
+Function: addOrder
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php
+Line: 479
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 4
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Checkout\Confirm
+Function: saveOrder
+
+Backtrace: 5
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 6
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-13 10:54:26 - PHP Warning:  Undefined array key "affiliate_id" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:54:26 - PHP Warning:  Undefined array key "commission" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:54:26 - PHP Warning:  Undefined array key "marketing_id" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:54:26 - PHP Warning:  Undefined array key "tracking" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:54:26 - Error: Opencart\System\Library\DB::escape(): Argument #1 ($value) must be of type string, null given, called in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/db.php
+Line: 64
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php
+Line: 93
+Class: Opencart\System\Library\DB
+Function: escape
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/loader.php
+Line: 343
+Class: Opencart\Catalog\Model\Checkout\Order
+Function: addOrder
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php
+Line: 480
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 4
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Checkout\Confirm
+Function: saveOrder
+
+Backtrace: 5
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 6
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-13 10:54:45 - PHP Warning:  Undefined array key "language_id" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:54:45 - PHP Warning:  Undefined array key "language_code" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+2025-08-13 10:54:45 - Error: Opencart\System\Library\DB::escape(): Argument #1 ($value) must be of type string, null given, called in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 93
+File: /Users/saqibashraf/Desktop/ocupwork/system/library/db.php
+Line: 64
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php
+Line: 93
+Class: Opencart\System\Library\DB
+Function: escape
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/loader.php
+Line: 343
+Class: Opencart\Catalog\Model\Checkout\Order
+Function: addOrder
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php
+Line: 485
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 4
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Checkout\Confirm
+Function: saveOrder
+
+Backtrace: 5
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 6
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-13 10:55:07 - PHP Warning:  Undefined array key "tax" in /Users/saqibashraf/Desktop/ocupwork/catalog/model/checkout/order.php on line 420
+2025-08-13 11:28:49 - PHP Warning:  Undefined array key "cost" in /Users/saqibashraf/Desktop/ocupwork/admin/controller/sale/order.php on line 962
+2025-08-13 11:28:49 - PHP Warning:  Undefined array key "tax_class_id" in /Users/saqibashraf/Desktop/ocupwork/admin/controller/sale/order.php on line 963
+2025-08-13 11:30:31 - Error: <b>Notice</b>:  Undefined property: Proxy::editToken in <b>/Users/saqibashraf/Desktop/ocupwork/catalog/controller/account/login.php</b> on line <b>277</b>
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/proxy.php
+Line: 91
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/account/login.php
+Line: 277
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Account\Login
+Function: token
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-13 11:30:37 - Error: <b>Notice</b>:  Undefined property: Proxy::editToken in <b>/Users/saqibashraf/Desktop/ocupwork/catalog/controller/account/login.php</b> on line <b>277</b>
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/proxy.php
+Line: 91
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/account/login.php
+Line: 277
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Account\Login
+Function: token
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-13 11:30:38 - Error: <b>Notice</b>:  Undefined property: Proxy::editToken in <b>/Users/saqibashraf/Desktop/ocupwork/catalog/controller/account/login.php</b> on line <b>277</b>
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/proxy.php
+Line: 91
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/account/login.php
+Line: 277
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Account\Login
+Function: token
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
+2025-08-13 11:35:09 - Error: Too few arguments to function Opencart\Catalog\Model\Account\Address::getAddress(), 1 passed in /Users/saqibashraf/Desktop/ocupwork/system/engine/loader.php on line 343 and exactly 2 expected
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/model/account/address.php
+Line: 134
+
+Backtrace: 0
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/loader.php
+Line: 343
+Class: Opencart\Catalog\Model\Account\Address
+Function: getAddress
+
+Backtrace: 1
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/proxy.php
+Line: 87
+Class: Opencart\System\Engine\Loader
+Function: Opencart\System\Engine\{closure}
+
+Backtrace: 2
+File: /Users/saqibashraf/Desktop/ocupwork/catalog/controller/checkout/confirm.php
+Line: 409
+Class: Opencart\System\Engine\Proxy
+Function: __call
+
+Backtrace: 3
+File: /Users/saqibashraf/Desktop/ocupwork/system/engine/action.php
+Line: 96
+Class: Opencart\Catalog\Controller\Checkout\Confirm
+Function: saveOrder
+
+Backtrace: 4
+File: /Users/saqibashraf/Desktop/ocupwork/system/framework.php
+Line: 259
+Class: Opencart\System\Engine\Action
+Function: execute
+
+Backtrace: 5
+File: /Users/saqibashraf/Desktop/ocupwork/index.php
+Line: 20
+Function: require_once
