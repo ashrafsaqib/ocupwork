@@ -5,7 +5,7 @@ define('APPLICATION', 'Admin');
 // HTTP
 define('HTTP_SERVER', 'http://opencartnew.local/admin/');
 define('HTTP_CATALOG', 'http://opencartnew.local/');
-
+// test
 // DIR
 define('DIR_OPENCART', '/Users/saqibashraf/Desktop/ocupwork/');
 define('DIR_APPLICATION', DIR_OPENCART . 'admin/');

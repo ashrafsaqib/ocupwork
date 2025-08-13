@@ -1,7 +1,7 @@
 <?php
 // APPLICATION
 define('APPLICATION', 'Catalog');
-
+//
 // HTTP
 define('HTTP_SERVER', 'http://opencartnew.local/');
 
