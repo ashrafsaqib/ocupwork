@@ -26,6 +26,26 @@
 </div>
 <script>
   function saveOrder() {
+    var validationFailed = false;
+    var firstInvalidElement = null;
+    var checkedRadioGroups = {};
+
+    // General validation for required fields
+    $('#content input').each(function() {
+        var field = $(this);
+        if ($.trim(field.val()) === '') {
+            firstInvalidElement = field;
+            validationFailed = true;
+            
+        }
+    });
+
+    if (validationFailed) {
+        alert('Please fill out all required fields.');
+        firstInvalidElement.focus();
+        return;
+    }
+
     var allocationInputs = $('input[name="allocation[]"]');
 
     if (allocationInputs.length > 0) {
@@ -52,7 +72,8 @@
               '&' + $('#form-shipping-address').serialize() +
               '&selected_controller=' + $('#select-controller').val() +
               '&' + $('input[name="bu[]"]').serialize() +
-              '&' + $('input[name="allocation[]"]').serialize(),
+              '&' + $('input[name="allocation[]"]').serialize() +
+              '&comment=' + encodeURIComponent($('#input-comment').val()),
         success: function(json) {
           // redirect to the success page
           if (json.redirect) {

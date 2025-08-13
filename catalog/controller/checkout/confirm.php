@@ -513,9 +513,10 @@ class Confirm extends \Opencart\System\Engine\Controller {
 			$custom_data = [
 				'selected_controller' => $this->request->post['selected_controller'] ?? '',
 				'bu' => $this->request->post['bu'] ?? [],
-				'allocation' => $this->request->post['allocation'] ?? []
+				'allocation' => $this->request->post['allocation'] ?? [],
 			];
-			$order_data['comment'] = json_encode($custom_data, JSON_PRETTY_PRINT);
+			$order_data['custom'] = json_encode($custom_data, JSON_PRETTY_PRINT);
+			$order_data['comment'] = $this->request->post['comment'] ?? '';
 
 
 

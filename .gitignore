@@ -5,3 +5,4 @@
 /system/storage/logs
 config.php
 admin/config.php
+/system/storage/cache
