@@ -128,4 +128,14 @@ class Cart extends \Opencart\System\Engine\Model {
 
 		array_multisort($sort_order, SORT_ASC, $totals);
 	}
+	// get data from table checkout_data 
+	public function getCheckoutData(): array {
+		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "checkout_data` ");
+
+		if ($query->num_rows) {
+			return $query->rows;
+		} else {
+			return [];
+		}
+	}
 }

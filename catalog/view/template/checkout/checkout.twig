@@ -7,26 +7,15 @@
   </ul>
   <div class="row">{{ column_left }}
     <div id="content" class="col">{{ content_top }}
-      <h1>{{ heading_title }}</h1>
       <div class="row">
-        {% if register or payment_address or shipping_address %}
+      
           <div class="col-md-7 mb-3">
-            {% if register %}
               <div id="checkout-register">{{ register }}</div>
-            {% endif %}
-            {% if payment_address %}
-              <div id="checkout-payment-address">{{ payment_address }}</div>
-            {% endif %}
             {% if shipping_address %}
               <div id="checkout-shipping-address">{{ shipping_address }}</div>
             {% endif %}
           </div>
-        {% endif %}
         <div class="col">
-          {% if shipping_method %}
-            <div id="checkout-shipping-method" class="mb-3">{{ shipping_method }}</div>
-          {% endif %}
-          <div id="checkout-payment-method" class="mb-4">{{ payment_method }}</div>
           <div id="checkout-confirm">{{ confirm }}</div>
         </div>
       </div>
@@ -35,4 +24,25 @@
   </div>
   {{ column_right }}
 </div>
+<script>
+  function saveOrder() {
+    $.ajax({
+        url: 'index.php?route=checkout/confirm.saveOrder&language={{ language }}',
+        type: 'post',
+        data: $('#form-register').serialize()+'&custom='+$('#select-option').val()+'&address_id='+$('#input-shipping-address').val()+'&'+$('#form-shipping-address').serialize(),
+        success: function(json) {
+          // redirect to the success page
+          if (json.redirect) {
+            window.location.href = json.redirect;
+          
+          }
+            //$('#checkout-confirm').html(html);
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+            console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+        }
+    });
+}
+
+</script>
 {{ footer }}

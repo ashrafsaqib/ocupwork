@@ -344,6 +344,9 @@ class Confirm extends \Opencart\System\Engine\Controller {
 			$data['payment'] = '';
 		}
 
+		// call cart method to get getCheckoutData
+		$data['checkout_data'] = $this->model_checkout_cart->getCheckoutData();
+
 		// Validate if payment method has been set.
 		return $this->load->view('checkout/confirm', $data);
 	}
@@ -356,4 +359,171 @@ class Confirm extends \Opencart\System\Engine\Controller {
 	public function confirm(): void {
 		$this->response->setOutput($this->index());
 	}
+
+	public function saveOrder(): void {
+		$this->load->language('checkout/confirm');
+		$this->load->model('checkout/order');
+
+		$json = [];
+
+		try {
+			$order_data = [];
+			$order_data['subscription_id'] = 0;
+			$order_data['payment_address_id'] = 0;
+			$order_data['shipping_address_id'] = 0;
+			$order_data['customer_id'] = 0;
+			$order_data['customer_group_id'] = 0;
+
+
+			
+			// Set basic order data
+			$order_data['invoice_prefix'] = $this->config->get('config_invoice_prefix');
+			$order_data['store_id'] = $this->config->get('config_store_id');
+			$order_data['store_name'] = $this->config->get('config_name');
+			$order_data['store_url'] = $this->config->get('config_url');
+			
+			// Handle customer data differently for logged in vs guest users
+			if ($this->customer->isLogged()) {
+				// For logged in users
+				$order_data['customer_id'] = $this->customer->getId();
+				$order_data['customer_group_id'] = $this->customer->getGroupId();
+				$order_data['firstname'] = $this->customer->getFirstName();
+				$order_data['lastname'] = $this->customer->getLastName();
+				$order_data['email'] = $this->customer->getEmail();
+				$order_data['telephone'] = $this->customer->getTelephone();
+			} else {
+				// For guest users
+				$order_data['customer_id'] = 0;
+				$order_data['customer_group_id'] = $this->request->post['customer_group_id'] ?? 1;
+				$order_data['firstname'] = $this->request->post['firstname'];
+				$order_data['lastname'] = $this->request->post['lastname'];
+				$order_data['email'] = $this->request->post['email'];
+				$order_data['telephone'] = $this->request->post['telephone'] ?? '';
+			}
+
+			// Shipping Details
+			if ($this->cart->hasShipping()) {
+				if ($this->customer->isLogged() && !empty($this->request->post['address_id']) && $this->request->post['address_id'] !== 'undefined') {
+					// For logged in users with valid address_id, use existing address
+					$this->load->model('account/address');
+					$shipping_address = $this->model_account_address->getAddress($this->customer->getId(), $this->request->post['address_id']);
+			
+					
+					if ($shipping_address) {	
+						$order_data['shipping_firstname'] = $shipping_address['firstname'];
+						$order_data['shipping_lastname'] = $shipping_address['lastname'];
+						$order_data['shipping_company'] = $shipping_address['company'];
+						$order_data['shipping_address_1'] = $shipping_address['address_1'];
+						$order_data['shipping_address_2'] = $shipping_address['address_2'];
+						$order_data['shipping_city'] = $shipping_address['city'];
+						$order_data['shipping_postcode'] = $shipping_address['postcode'];
+						$order_data['shipping_country_id'] = $shipping_address['country_id'];
+						$order_data['shipping_zone_id'] = $shipping_address['zone_id'];
+					}
+				} else {
+					// For guest users or new address or when address_id is undefined
+					$order_data['shipping_firstname'] = $this->request->post['firstname'] ?? '';
+					$order_data['shipping_lastname'] = $this->request->post['lastname'] ?? '';
+					$order_data['shipping_company'] = $this->request->post['shipping_company'] ?? '';
+					$order_data['shipping_address_1'] = $this->request->post['shipping_address_1'] ?? '';
+					$order_data['shipping_address_2'] = $this->request->post['shipping_address_2'] ?? '';
+					$order_data['shipping_city'] = $this->request->post['shipping_city'] ?? '';
+					$order_data['shipping_postcode'] = $this->request->post['shipping_postcode'] ?? '';
+					$order_data['shipping_country_id'] = $this->request->post['shipping_country_id'] ?? 0;
+					$order_data['shipping_zone_id'] = $this->request->post['shipping_zone_id'] ?? 0;
+				}
+
+				// Custom field handling
+				$order_data['custom'] = $this->request->post['custom'] ?? '';
+			}
+			// Payment Details from order data
+			$order_data['payment_firstname'] = $order_data['firstname'];
+			$order_data['payment_lastname'] = $order_data['lastname'];
+			$order_data['payment_company'] = $order_data['shipping_company'] ?? '';
+			$order_data['payment_address_1'] = $order_data['shipping_address_1'] ?? '';
+			$order_data['payment_address_2'] = $order_data['shipping_address_2'] ?? '';
+			$order_data['payment_city'] = $order_data['shipping_city'] ?? '';
+			$order_data['payment_postcode'] = $order_data['shipping_postcode'] ?? '';
+			$order_data['payment_country_id'] = $order_data['shipping_country_id'] ?? 0;
+			$order_data['payment_zone_id'] = $order_data['shipping_zone_id'] ?? 0;
+			$order_data['payment_method'] =  [
+	          'name' => 'Default',
+	         'code' => 'cod.cod'
+	      ];
+			$order_data['payment_code'] = 'cod';
+			$order_data['shipping_method'] = $this->request->post['shipping_method'] ?? [];
+			$order_data['shipping_code'] = $this->request->post['shipping_code'] ?? '';
+			$order_data['payment_country'] = '';
+			$order_data['shipping_country'] = '';
+			$order_data['payment_zone'] = '';
+			$order_data['shipping_zone'] = '';
+			$order_data['payment_address_format'] = '';
+			$order_data['shipping_address_format'] = '';
+			$order_data['shipping_method'] = [
+				'name' => 'Default Shipping',
+				'code' => 'flat.flat',
+				'cost' => 0,
+				'tax_class_id' => 0,
+			];
+			$order_data['comment'] = '';
+			$order_data['affiliate_id'] = 0;
+			$order_data['commission'] = 0;
+			$order_data['marketing_id'] = 0;
+			$order_data['tracking'] = '';
+			$order_data['language_id'] = $this->config->get('config_language_id');
+			$order_data['language_code'] = $this->config->get('config_language');
+			$order_data['currency_id'] = $this->currency->getId($this->session->data['currency']);
+			$order_data['currency_code'] = $this->session->data['currency'];
+			$order_data['currency_value'] = $this->currency->getValue($this->session->data['currency']);
+			$order_data['ip'] = oc_get_ip();
+			$order_data['forwarded_ip'] = '';
+			$order_data['user_agent'] = '';
+			$order_data['accept_language'] = '';
+			$order_data['order_status_id'] = 1;
+
+
+
+
+			// Get cart products and totals
+			$this->load->model('checkout/cart');
+			$products = $this->cart->getProducts();
+			$totals = [];
+			$taxes = $this->cart->getTaxes();
+			$total = 0;
+
+			($this->model_checkout_cart->getTotals)($totals, $taxes, $total);
+
+			// Add products to order
+			$order_data['products'] = [];
+			foreach ($products as $product) {
+				$order_data['products'][] = [
+					'subscription' => [],
+					'tax'          => $this->tax->getTax($product['price'], $product['tax_class_id'])
+				] + $product;
+			}
+
+			// Add totals
+			$order_data['totals'] = $totals;
+			$order_data['total'] = $total;
+			$order_data['taxes'] = $taxes;
+
+			// Save the order
+			$order_id = $this->model_checkout_order->addOrder($order_data);
+			// update order status
+			$this->model_checkout_order->editOrderStatusId($order_id, $order_data['order_status_id']);
+			
+			$json['order_id'] = $order_id;
+			$json['success'] = true;
+			// clear cart
+			$this->cart->clear();
+			$json['redirect'] = $this->url->link('checkout/success', 'language=' . $this->config->get('config_language'));
+
+		} catch (\Exception $e) {
+			$json['error'] = $e->getMessage();
+		}
+
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
+
 }

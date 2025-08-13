@@ -56,7 +56,7 @@
           <input type="text" name="postcode" value="{{ postcode }}" placeholder="{{ entry_postcode }}" id="input-shipping-postcode" class="form-control"/>
           <div id="error-shipping-postcode" class="invalid-feedback"></div>
         </div>
-        <div class="col mb-3 required">
+        <div class="col mb-3 d-none">
           <label for="input-shipping-country" class="form-label">{{ entry_country }}</label>
           <select name="country_id" id="input-shipping-country" class="form-select">
             <option value="0">{{ text_select }}</option>
@@ -182,7 +182,7 @@
     </form>
   </div>
 </fieldset>
-<script type="text/javascript"><!--
+<script type="text/javascript">
 $('input[name=\'shipping_existing\']').on('change', function() {
     if ($(this).val() == 1) {
         $('#shipping-existing').show();
@@ -192,7 +192,8 @@ $('input[name=\'shipping_existing\']').on('change', function() {
         $('#shipping-new').show();
     }
 });
-
+</script>
+<!--
 // Existing Shipping Address
 $('#input-shipping-address').on('change', function() {
     var element = this;
@@ -372,4 +373,4 @@ $('#input-shipping-country').on('change', function() {
         });
     });
 });
-//--></script>
+</script>//-->
