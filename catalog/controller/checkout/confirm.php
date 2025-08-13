@@ -374,6 +374,16 @@ class Confirm extends \Opencart\System\Engine\Controller {
 			$order_data['customer_id'] = 0;
 			$order_data['customer_group_id'] = 0;
 
+			$order_data['shipping_firstname'] = '';
+			$order_data['shipping_lastname'] = '';
+			$order_data['shipping_company'] = '';
+			$order_data['shipping_address_1'] = '';
+			$order_data['shipping_address_2'] = '';
+			$order_data['shipping_city'] = '';
+			$order_data['shipping_postcode'] = '';
+			$order_data['shipping_country_id'] = '';
+			$order_data['shipping_zone_id'] = '';
+
 
 			
 			// Set basic order data
@@ -394,15 +404,14 @@ class Confirm extends \Opencart\System\Engine\Controller {
 			} else {
 				// For guest users
 				$order_data['customer_id'] = 0;
-				$order_data['customer_group_id'] = $this->request->post['customer_group_id'] ?? 1;
+				$order_data['customer_group_id'] = 0;
 				$order_data['firstname'] = $this->request->post['firstname'];
 				$order_data['lastname'] = $this->request->post['lastname'];
 				$order_data['email'] = $this->request->post['email'];
-				$order_data['telephone'] = $this->request->post['telephone'] ?? '';
+				$order_data['telephone'] =  '';
 			}
 
 			// Shipping Details
-			if ($this->cart->hasShipping()) {
 				if ($this->customer->isLogged() && !empty($this->request->post['address_id']) && $this->request->post['address_id'] !== 'undefined') {
 					// For logged in users with valid address_id, use existing address
 					$this->load->model('account/address');
@@ -435,7 +444,6 @@ class Confirm extends \Opencart\System\Engine\Controller {
 
 				// Custom field handling
 				$order_data['custom'] = $this->request->post['custom'] ?? '';
-			}
 			// Payment Details from order data
 			$order_data['payment_firstname'] = $order_data['firstname'];
 			$order_data['payment_lastname'] = $order_data['lastname'];
