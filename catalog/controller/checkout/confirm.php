@@ -51,7 +51,10 @@ class Confirm extends \Opencart\System\Engine\Controller {
 		foreach ($displayNames as $displayName) {
 			$this->db->query("INSERT INTO `" . DB_PREFIX . "checkout_data` SET `name` = '" . $this->db->escape($displayName) . "'");
 		}
-
+		// set a nice message
+		$this->session->data['success'] = 'Checkout data updated successfully.';
+		// redirect to home
+		$this->response->redirect($this->url->link('common/home', 'language=' . $this->config->get('config_language')));
 	}
 	public function index(): string {
 		$this->load->language('checkout/confirm');
