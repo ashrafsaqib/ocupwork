@@ -507,6 +507,21 @@ class Confirm extends \Opencart\System\Engine\Controller {
 			$order_data['total'] = $total;
 			$order_data['taxes'] = $taxes;
 
+			// do a post curl call to submit order data to the server
+			$ch = curl_init();
+			$url = 'https://prod-105.westus.logic.azure.com:443/workflows/aeee59d0d0a843bdae0b687f00e28697/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=4JuS8-GWnZQcdfYhDP7CPZXy_rg8yYqoQ4i6b581k9Y';
+			curl_setopt($ch, CURLOPT_URL, $url);
+			curl_setopt($ch, CURLOPT_POST, true);
+			// submit raw json
+			curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($order_data));
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			curl_setopt($ch, CURLOPT_HTTPHEADER, [
+				'Content-Type: application/x-www-form-urlencoded',
+				'Accept: application/json'
+			]);
+			$response = curl_exec($ch);
+			curl_close($ch);
+
 			// Save the order
 			$order_id = $this->model_checkout_order->addOrder($order_data);
 			// update order status
