@@ -3,7 +3,7 @@
 define('APPLICATION', 'Catalog');
 
 // HTTP
-define('HTTP_SERVER', 'http://opencartnew.local/');
+define('HTTP_SERVER', 'http://opencartfour.local/');
 
 // DIR
 define('DIR_OPENCART', '/Users/saqibashraf/Desktop/ocupwork/');
@@ -26,7 +26,7 @@ define('DB_DRIVER', 'mysqli');
 define('DB_HOSTNAME', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', 'yourpassword');
-define('DB_DATABASE', 'oc4');
+define('DB_DATABASE', 'oc4x');
 define('DB_PORT', '3306');
 define('DB_PREFIX', 'oc_');
 define('DB_SSL_KEY', '');
